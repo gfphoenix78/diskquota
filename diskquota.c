@@ -499,7 +499,7 @@ disk_quota_launcher_main(Datum main_arg)
 		loop_end = time(NULL);
 		if (isAbnormalLoopTime(loop_end - loop_begin))
 		{
-			ereport(WARN, (errmsg("[diskquota-loop] loop takes too much time %d/%d",
+			ereport(WARNING, (errmsg("[diskquota-loop] loop takes too much time %d/%d",
 				(int)(loop_end - loop_begin), diskquota_naptime)));
 		}
 	}
